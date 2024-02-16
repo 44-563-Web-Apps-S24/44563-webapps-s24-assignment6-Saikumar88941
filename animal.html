@@ -9,33 +9,34 @@
 
 <h2>Animal name by Saikumar</h2>
 
-<form>
-    <label for="form1_animalname">What is your age </label>
-    <input type ="password" value="Chicken" id="form1_animalname" name="form1_animalname" min=10 max=50 step=2 value=30> <br>
 
-    <label for="form1_guess">Guess the Animal </label>
+<form>
+    <label for="form1_animal">The hidden animal type </label>
+    <input type ="password"  value="Chicken" id="form1_animal" name="form1_animal" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_guess"> Guess the animal</label>
     <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
 
-    <input type="button" onclick="CheckAnimal()" value="Check the Guess">
+    <input type="button" onclick="checkAnimal()" value="Check the guess">
 </form>
 
 
 <p id="correctResult">This text will be replaced </p>
-<p id="wrongResult">This text will be replaced</p>
+<p id="wrongResult">This text will be replaced </p>
+
+
 
 <script> 
     var wrong = 0;
     var correct = 0;
     function checkAnimal (){
-
-
-
-    console.log("Getting form values")
-    Animal = document.getElementById("form1_age").value
-    Guess = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+Animal+" and "+Guess)
     
-    correctResult = document.getElementById("correctResult")
+        console.log("Getting form values")
+        animal = document.getElementById("form1_animal").value
+        guess = document.getElementById("form1_guess").value
+        confirmed = confirm("Are these the values? "+animal+" and "+guess)
+        
+        correctResult = document.getElementById("correctResult")
         wrongResult = document.getElementById("wrongResult")
 
         if(animal.toUpperCase() == guess.toUpperCase()){
@@ -47,8 +48,8 @@
             alert('Grrrr')
             wrongResult.innerHTML = `Wrong Count: ${wrong}`
         }
-}
+    }
 </script>
-
+   
 </body>
 </html> 
